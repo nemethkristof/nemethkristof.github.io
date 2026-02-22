@@ -1,58 +1,26 @@
-import React, { useState } from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Education from "./components/Education";
-import Work from "./components/Work";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import { useState } from "react";
 import "./App.css";
-const lightTheme = {
-  text: '#4a3530',
-  background: '#d4d0c4',
-  primary: '#40e0d0',
-  secondary: '#a7c9ae',
-  accent: '#85b4b1',
-};
-
-const darkTheme = {
-  text: '#cfbab5',
-  background: '#3b372b',
-  primary: '#1fc1b1',
-  secondary: '#36593d',
-  accent: '#4c7b78',
-};
+import FloatingLines from './components/FloatingLines';
 
 function App() {
-  const [dark, setDark] = useState(false);
-
-  // CSS változók beállítása inline style-ban a fény/dark téma szerint
-  const themeVars = dark
-    ? {
-        '--text': darkTheme.text,
-        '--background': darkTheme.background,
-        '--primary': darkTheme.primary,
-        '--secondary': darkTheme.secondary,
-        '--accent': darkTheme.accent,
-        '--is-dark': 1,
-      }
-    : {
-        '--text': lightTheme.text,
-        '--background': lightTheme.background,
-        '--primary': lightTheme.primary,
-        '--secondary': lightTheme.secondary,
-        '--accent': lightTheme.accent,
-        '--is-dark': 0,
-      };
+  const [count, setCount] = useState(0);
 
   return (
-    <div style={themeVars} className="app-root">
-      <Navbar dark={dark} setDark={setDark} />
-      <Hero />
-      <Education />
-      <Work />
-      <Projects />
-      <Contact />
-    </div>
+    <>
+      <div style={{ width: "100%", height: "100vh", position: "relative" }}>
+        <FloatingLines
+          enabledWaves={["top", "middle", "bottom"]}
+          // Array - specify line count per wave; Number - same count for all waves
+          lineCount={5}
+          // Array - specify line distance per wave; Number - same distance for all waves
+          lineDistance={5}
+          bendRadius={5}
+          bendStrength={-0.5}
+          interactive={true}
+          parallax={true}
+        />
+      </div>
+    </>
   );
 }
 
