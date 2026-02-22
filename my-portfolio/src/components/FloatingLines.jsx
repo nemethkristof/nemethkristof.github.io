@@ -284,9 +284,18 @@ export default function FloatingLines({
 
     const renderer = new WebGLRenderer({ antialias: true, alpha: false });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    // make the canvas visually cover the viewport as a fixed background
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
-    containerRef.current.appendChild(renderer.domElement);
+    renderer.domElement.style.position = 'fixed';
+    renderer.domElement.style.left = '0';
+    renderer.domElement.style.top = '0';
+    renderer.domElement.style.zIndex = '0';
+    // do not let the canvas capture pointer events (keep UI interactive)
+    renderer.domElement.style.pointerEvents = 'none';
+    // append canvas to the document body so it always sits behind app content
+    const parentForCanvas = document.body || containerRef.current;
+    parentForCanvas.appendChild(renderer.domElement);
 
     const uniforms = {
       iTime: { value: 0 },
@@ -404,8 +413,9 @@ export default function FloatingLines({
     };
 
     if (interactive) {
-      renderer.domElement.addEventListener('pointermove', handlePointerMove);
-      renderer.domElement.addEventListener('pointerleave', handlePointerLeave);
+      // listen on window/document so overlays don't block cursor tracking
+      window.addEventListener('pointermove', handlePointerMove);
+      document.addEventListener('mouseleave', handlePointerLeave);
     }
 
     let raf = 0;
@@ -439,7 +449,8 @@ export default function FloatingLines({
 
       if (interactive) {
         renderer.domElement.removeEventListener('pointermove', handlePointerMove);
-        renderer.domElement.removeEventListener('pointerleave', handlePointerLeave);
+        window.removeEventListener('pointermove', handlePointerMove);
+        document.removeEventListener('mouseleave', handlePointerLeave);
       }
 
       geometry.dispose();
