@@ -31,27 +31,27 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="bg-background py-20">
       <motion.h2
-        className="text-3xl font-bold text-center mb-10"
+        className="text-main font-bold text-center mb-10 text-3xl"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         My Projects
       </motion.h2>
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-4xl mx-auto grid grid-cols-1 gap-8">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="p-6 border rounded-lg shadow-lg"
+            className="p-6 rounded-lg shadow-lg border border-main-light"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <h3 className="text-xl font-semibold">{project.title}</h3>
-            <p className="mt-2">{project.description}</p>
-            <a href={project.link} className="text-blue-500 hover:underline mt-4 inline-block">
+            <h3 className="text-main-dark font-bold text-xl">{project.title}</h3>
+            <p className="mt-2 text-secondary">{project.description}</p>
+            <a href={project.link} className="text-main hover:underline mt-4 inline-block">
               View Project
             </a>
           </motion.div>
