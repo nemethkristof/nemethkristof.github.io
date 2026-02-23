@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Section from './components/Section';
 import ResumeItem from './components/ResumeItem';
 import SkillPill from './components/SkillPill';
+import meImage from './public/me.jpg';
 import './App.css';
 
 function App() {
@@ -22,15 +23,22 @@ function App() {
         <Navbar />
 
         <main className="pt-28">
-          <Section id="hero" title="Kristóf Németh — Curriculum Vitae">
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Software Engineer</h3>
-                <p className="text-sm text-white/80 mb-4">MSc Computer Engineering | Cyber-Medical Systems Specialization</p>
-                <p className="text-sm text-white/70 mb-4">
+          <Section id="hero" title="Kristóf Németh">
+            <div className="flex flex-col items-center gap-6">
+              <div className="shrink-0">
+                <img 
+                  src={meImage}
+                  alt="Kristóf Németh" 
+                  className="w-40 h-40 rounded-full object-cover border-2 border-white/20"
+                />
+              </div>
+              <div className="flex-1 space-y-3 text-center">
+                <h3 className="text-xl font-semibold">Software Engineer</h3>
+                <p className="text-sm text-white/80">MSc Computer Engineering | Cyber-Medical Systems Specialization</p>
+                <p className="text-sm text-white/70">
                   Software Engineer with an MSc degree and over 2 years of professional experience in critical infrastructure environments. Strong mathematical foundation with expertise in Java (Spring Boot), C#, React, and PostgreSQL. Seeking a Midlevel Software Engineer role in an innovative team.
                 </p>
-                <div className="flex flex-col gap-2 text-sm text-white/70">
+                <div className="flex flex-col gap-2 text-sm text-white/70 items-center">
                   <p><span className="font-semibold text-white">Mobile:</span> +36 20 446 2467</p>
                   <p><span className="font-semibold text-white">E-mail:</span> n.kristof99@gmail.com</p>
                   <p><span className="font-semibold text-white">Languages:</span> English B2</p>
