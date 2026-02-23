@@ -23,7 +23,7 @@ function App() {
         <Navbar />
 
         <main className="pt-28">
-          <Section id="hero" title="Kristóf Németh">
+          <Section id="hero" title="About Me">
             <div className="flex flex-col items-center gap-6">
               <div className="shrink-0">
                 <img 
@@ -33,6 +33,7 @@ function App() {
                 />
               </div>
               <div className="flex-1 space-y-3 text-center">
+                <h1 className="text-3xl font-bold">Kristóf Németh</h1>
                 <h3 className="text-xl font-semibold">Software Engineer</h3>
                 <p className="text-sm text-white/80">MSc Computer Engineering | Cyber-Medical Systems Specialization</p>
                 <p className="text-sm text-white/70">
