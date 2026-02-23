@@ -32,7 +32,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-20 w-[90%] max-w-4xl">
       <div className="glass flex items-center justify-between px-4 py-2 rounded-xl shadow-md">
-        <div className="text-sm font-semibold">Resume</div>
+        <div className="text-sm font-semibold">NK</div>
 
         {/* Desktop links */}
         <div className="hidden md:flex gap-3 items-center">

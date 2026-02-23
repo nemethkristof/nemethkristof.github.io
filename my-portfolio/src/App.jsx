@@ -24,16 +24,17 @@ function App() {
         <main className="pt-28">
           <Section id="hero" title="Kristóf Németh — Curriculum Vitae">
             <div className="space-y-4">
-              <p className="text-sm text-white/80">English CV — please replace with your actual translated content.</p>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                  <h3 className="text-xl font-semibold">Frontend Developer</h3>
-                  <p className="text-sm text-white/70">Budapest, Hungary • nemeth@example.com • +36 70 000 0000</p>
-                </div>
-                <div className="flex flex-wrap">
-                  <SkillPill>React</SkillPill>
-                  <SkillPill>TailwindCSS</SkillPill>
-                  <SkillPill>Three.js</SkillPill>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Software Engineer</h3>
+                <p className="text-sm text-white/80 mb-4">MSc Computer Engineering | Cyber-Medical Systems Specialization</p>
+                <p className="text-sm text-white/70 mb-4">
+                  Software Engineer with an MSc degree and over 2 years of professional experience in critical infrastructure environments. Strong mathematical foundation with expertise in Java (Spring Boot), C#, React, and PostgreSQL. Seeking a Midlevel Software Engineer role in an innovative team.
+                </p>
+                <div className="flex flex-col gap-2 text-sm text-white/70">
+                  <p><span className="font-semibold text-white">Mobile:</span> +36 20 446 2467</p>
+                  <p><span className="font-semibold text-white">E-mail:</span> n.kristof99@gmail.com</p>
+                  <p><span className="font-semibold text-white">Languages:</span> English B2</p>
+                  <p><span className="font-semibold text-white">Hobbies:</span> Basketball, Coffee</p>
                 </div>
               </div>
             </div>
@@ -41,38 +42,56 @@ function App() {
 
           <Section id="experience" title="Experience">
             <ResumeItem
-              title="Frontend Engineer — Example Company"
-              subtitle="Worked on web interfaces and animations"
-              date="2021 - Present"
-              bullets={["Built interactive UI with React and Tailwind", "Optimized performance and accessibility"]}
-            />
-            <ResumeItem
-              title="Junior Developer — Another Company"
-              subtitle="Contributed to multiple client projects"
-              date="2019 - 2021"
-              bullets={["Implemented responsive layouts", "Integrated APIs and CI/CD"]}
+              title="Software Engineer — Hungarian Banknote Printing Company"
+              subtitle="Developed backend services and internal tools in critical infrastructure"
+              date="Oct 2023 – Present"
+              bullets={[
+                "Developed and maintained backend services for production support systems within a high-security, critical infrastructure environment",
+                "Designed and implemented a company-wide internal directory application (End-to-End) using React, improving internal communication efficiency",
+                "Executed system integrations via webMethods for real-time manufacturing process monitoring and order backlog tracking",
+                "Developed low-level system components (DLLs) for secure document and microchip personalization",
+                "Promoted (Spring 2025) to higher seniority level for outstanding technical performance",
+                "Tech Stack: Java, Spring Boot, C#, PostgreSQL, React, Software AG webMethods"
+              ]}
             />
           </Section>
 
           <Section id="education" title="Education">
             <ResumeItem
-              title="BSc Computer Science"
-              subtitle="University Name"
-              date="2015 - 2018"
-              bullets={["Relevant coursework: Algorithms, Web Development"]}
+              title="MSc in Computer Engineering — Óbuda University"
+              subtitle="Specialization: Cyber-Medical Systems"
+              date="Feb 2024 – Feb 2026"
+              bullets={[
+                "Degree Classification: Good",
+                "Thesis: Correcting tests with machine learning and image processing"
+              ]}
+            />
+            <ResumeItem
+              title="BSc in Computer Engineering — Óbuda University"
+              subtitle="Specialization: Software Design and Development"
+              date="Sept 2018 – June 2023"
+              bullets={[
+                "Degree Classification: Good",
+                "Special Prize at the 56th Scientific Students' Associations Conference (TDK) – Image Processing Section",
+                "Thesis: Classifying abstract paintings with machine learning"
+              ]}
             />
           </Section>
 
           <Section id="skills" title="Skills">
             <div className="flex flex-wrap">
-              {['JavaScript','React','Tailwind','Three.js','HTML','CSS','Git'].map(s => (
+              {['Java','Spring Boot','C#','React','PostgreSQL','JavaScript','HTML','CSS','Git','webMethods','Machine Learning','Image Processing'].map(s => (
                 <SkillPill key={s}>{s}</SkillPill>
               ))}
             </div>
           </Section>
 
           <Section id="contact" title="Contact">
-            <p className="text-sm text-white/80">Feel free to replace this with your translated contact details and links to LinkedIn/GitHub.</p>
+            <div className="space-y-2 text-sm text-white/80">
+              <p><span className="font-semibold text-white">Mobile:</span> +36 20 446 2467</p>
+              <p><span className="font-semibold text-white">E-mail:</span> <a href="mailto:n.kristof99@gmail.com" className="hover:text-white transition">n.kristof99@gmail.com</a></p>
+              <p><span className="font-semibold text-white">Location:</span> Budapest, Hungary</p>
+            </div>
           </Section>
         </main>
       </div>
