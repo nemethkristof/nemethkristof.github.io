@@ -26,8 +26,6 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          # Itt add meg az almappád nevét!
-          cache-dependency-path: './package-lock.json' 
 
       - name: Install and Build
         run: |
@@ -37,7 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Itt is add meg az almappát és a /dist-et!
+          # Mivel nincs almappa, a dist a gyökérben lesz
           path: './dist'
 
   deploy:
